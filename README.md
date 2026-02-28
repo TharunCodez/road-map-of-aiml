@@ -77,29 +77,11 @@ Implement at least one algorithm from scratch.
 
 ```mermaid
 graph LR
-    %% Define CSS styles for different categories
-    classDef storage fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef processing fill:#fff3e0,stroke:#e65100,stroke-width:2px;
-    classDef modeling fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef production fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
-
-    %% Define Nodes with Shapes
-    A[(Raw Data)]:::storage
-    B(Data Cleaning):::processing
-    C(Feature Engineering):::processing
-    D{{Model Training}}:::modeling
-    E{Evaluation}:::modeling
-    F([Deployment]):::production
-
-    %% Define Connections
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    
-    %% Branching logic at Evaluation
-    E -->|Success| F
-    E -.->|Needs Improvement| C
+    A[Data] --> B[Cleaning]
+    B --> C[Feature Engineering]
+    C --> D[Model Training]
+    D --> E[Evaluation]
+    E --> F[Deployment]
 ```
 
 
@@ -130,20 +112,11 @@ Use:
 
 ```mermaid
 graph LR
-    %% Define styles
-    classDef data fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef operation fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef parameter fill:#fff3e0,stroke:#e65100,stroke-width:2px;
-
-    %% Nodes
-    A[(Input Data)]:::data --> B{Weights}:::parameter
-    B --> C(Activation Function):::operation
-    C --> D[(Loss / Error)]:::data
-    D --> E(Backpropagation):::operation
-    E --> F(Weight Update):::operation
-    
-    %% Loop
-    F -.->|Adjusts| B
+    A[Input] --> B[Weights]
+    B --> C[Activation]
+    C --> D[Loss]
+    D --> E[Backpropagation]
+    E --> F[Weight Update]
 ```
 
 
@@ -173,32 +146,13 @@ Learn:
 ## LLM Architecture (Simplified)
 
 ```mermaid
-graph LR
-    %% Define CSS styles for different categories
-    classDef user fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
-    classDef model fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    classDef database fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef data fill:#fff3e0,stroke:#e65100,stroke-width:2px;
-
-    %% Define Nodes with Shapes
-    A([User Query]):::user
-    B{{Embedding Model}}:::model
-    C[(Vector Database Search)]:::database
-    D[/Relevant Context/]:::data
-    E{{LLM Response}}:::model
-    F([Final Answer]):::user
-
-    %% Define Connections
-    A --> B
-    B -->|Vectors| C
-    C -->|Top-K Results| D
-    D --> E
-    E --> F
-    
-    %% RAG logic: The LLM needs the original question too!
-    A -.->|Passes original prompt| E
+graph TD
+    A[User Query] --> B[Embedding Model]
+    B --> C[Vector Database Search]
+    C --> D[Relevant Context]
+    D --> E[LLM Response]
+    E --> F[Final Answer]
 ```
-
 
 Understand this fully.
 
@@ -308,4 +262,5 @@ Become someone who can:
 - Optimize systems
 
 That is what high salary companies pay for.
+
 
