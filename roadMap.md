@@ -309,3 +309,4 @@ Become someone who can:
 
 That is what high salary companies pay for.
 
+Tried out git commands
