@@ -310,3 +310,4 @@ Become someone who can:
 That is what high salary companies pay for.
 
 Tried out git commands
+2nd try - without --set-upstream/-u
